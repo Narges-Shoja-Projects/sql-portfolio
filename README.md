@@ -9,7 +9,7 @@ We want to reward our first 8 paying customers.
 SELECT customer_id
 FROM payment
 ORDER BY payment_date ASC
-LIMIT 10;
+LIMIT 8;
 ```
 ### Explanation
 
