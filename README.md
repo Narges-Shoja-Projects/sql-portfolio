@@ -1,8 +1,7 @@
 # SQL queries and business case challenges
 
-## Challenge 1: First 8 Paying Customers
 ### Business Problem
-We want to reward our first 8 paying customers.
+We want to reward our first 8 paying customers. We need to find their customer IDs.
 ### SQL Query
 
 ```sql
