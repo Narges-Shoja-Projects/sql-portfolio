@@ -1,8 +1,13 @@
 # SQL queries and business case challenges
 
+
 ## Challenge 1
+
 ### Business Problem
 We want to reward our first 8 paying customers. We need to find their customer IDs.
+
+---
+
 ### SQL Query
 
 ```sql
@@ -11,17 +16,22 @@ FROM payment
 ORDER BY payment_date ASC
 LIMIT 8;
 ```
+
+---
+
 ### Explanation
 
-- `SELECT customer_id` retrieves customer IDs
-- `FROM payment` selects data from the payment table
-- `ORDER BY payment_date ASC` sorts from earliest payment to latest
-- `LIMIT 8` returns only the first 8 customers
+- `SELECT customer_id` retrieves customer IDs  
+- `FROM payment` selects data from the payment table  
+- `ORDER BY payment_date ASC` sorts from earliest to latest payment  
+- `LIMIT 8` returns only the first 8 customers  
+
+---
 
 ### Result
 
 | customer_id |
-|-------------| 
+|-------------|
 | 416 |
 | 516 |
 | 239 |
@@ -30,6 +40,7 @@ LIMIT 8;
 | 264 |
 | 46 |
 | 481 |
+
 
 
 ## Challenge 2
