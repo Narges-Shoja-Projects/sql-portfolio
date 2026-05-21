@@ -1,5 +1,5 @@
-# sql-portfolio
-SQL practice queries and business case challenges
+# SQL queries and business case challenges
+
 ## Challenge 1: First 8 Paying Customers
 ### Business Problem
 We want to reward our first 8 paying customers.
@@ -16,12 +16,12 @@ LIMIT 8;
 - `SELECT customer_id` retrieves customer IDs
 - `FROM payment` selects data from the payment table
 - `ORDER BY payment_date ASC` sorts from earliest payment to latest
-- `LIMIT 8` returns only the first 10 customers
+- `LIMIT 8` returns only the first 8 customers
 
 ### Result
 
 | customer_id |
-|-------------|
+ 
 | 416 |
 | 516 |
 | 239 |
