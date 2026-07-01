@@ -148,3 +148,42 @@ LIMIT 1;
 | staff_id | count |
 |----------|------:|
 | 2 | 7304 |
+
+
+## Challenge 5
+
+### Business Problem
+
+We are launching a platinum service for our most loyal customers. We will assign Platinum status to customers who have made **40 or more payment transactions**.
+Which customer IDs are eligible for Platinum status?
+
+---
+
+### SQL Query
+
+```sql
+SELECT customer_id, COUNT(amount)
+FROM payment
+GROUP BY customer_id
+HAVING COUNT(amount) >= 40;
+```
+
+---
+
+### Explanation
+
+- `SELECT customer_id, COUNT(amount)` returns each customer's ID and the number of payment transactions they made
+- `FROM payment` selects data from the payment table
+- `GROUP BY customer_id` groups the payments by each customer
+- `COUNT(amount)` counts the number of payments made by each customer
+- `HAVING COUNT(amount) >= 40` filters the results to include only customers with 40 or more payment transactions
+
+---
+
+### Result
+
+| customer_id | count |
+|------------:|------:|
+| 144 | 40 |
+| 526 | 42 |
+| 148 | 45 |
