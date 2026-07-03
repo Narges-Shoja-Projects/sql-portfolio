@@ -187,3 +187,82 @@ HAVING COUNT(amount) >= 40;
 | 144 | 40 |
 | 526 | 42 |
 | 148 | 45 |
+
+
+## Challenge 6
+
+### Business Problem
+
+The marketing team wants to identify high-value customers who have spent **more than $110** with **Staff Member #2**. These customers may qualify for a special loyalty reward or exclusive promotion.
+
+---
+
+### SQL Query
+
+```sql
+SELECT customer_id, SUM(amount)
+FROM payment
+WHERE staff_id = 2
+GROUP BY customer_id
+HAVING SUM(amount) > 110;
+```
+
+---
+
+### Explanation
+
+- `SELECT customer_id, SUM(amount)` returns each customer's ID and the total amount they spent.
+- `FROM payment` retrieves payment records.
+- `WHERE staff_id = 2` includes only payments processed by Staff Member #2.
+- `GROUP BY customer_id` groups the payments by customer.
+- `SUM(amount)` calculates the total amount spent by each customer.
+- `HAVING SUM(amount) > 110` filters the results to include only customers who spent more than **$110**.
+
+---
+
+### Result
+
+| customer_id | total_spent |
+|------------:|------------:|
+| 187 | 110.97 |
+| 148 | 114.73 |
+| 526 | 111.55 |
+
+
+## Challenge 7
+
+### Business Problem
+
+The customer service team needs to locate the customer with the **highest customer ID** whose **first name begins with "E"** and whose **address ID is less than 500**.
+
+---
+
+### SQL Query
+
+```sql
+SELECT first_name, last_name
+FROM customer
+WHERE first_name LIKE 'E%'
+AND address_id < 500
+ORDER BY customer_id DESC
+LIMIT 1;
+```
+
+---
+
+### Explanation
+
+- `SELECT first_name, last_name` returns the customer's first and last name.
+- `FROM customer` retrieves data from the customer table.
+- `WHERE first_name LIKE 'E%'` filters customers whose first name starts with **E**.
+- `AND address_id < 500` limits the results to customers with an address ID below **500**.
+- `ORDER BY customer_id DESC` sorts the matching customers by customer ID in descending order.
+- `LIMIT 1` returns only the customer with the highest customer ID.
+
+---
+
+### Result
+
+| first_name | last_name |
+|------------|-----------|
+| Eddie | Tomlin |
