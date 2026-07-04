@@ -26,22 +26,6 @@ LIMIT 8;
 - `ORDER BY payment_date ASC` sorts from earliest to latest payment  
 - `LIMIT 8` returns only the first 8 customers  
 
----
-
-### Result
-
-| customer_id |
-|-------------|
-| 416 |
-| 516 |
-| 239 |
-| 592 |
-| 49 |
-| 264 |
-| 46 |
-| 481 |
-
-
 
 ## Challenge 2
 
@@ -68,18 +52,6 @@ LIMIT 5;
 - `ORDER BY length ASC` sorts movies from shortest to longest  
 - `LIMIT 5` returns only the 5 shortest movies  
 
----
-
-### Result
-
-| title | length |
-|------|--------|
-| Labyrinth League | 46 |
-| Alien Center | 46 |
-| Iron Moon | 46 |
-| Kwai Homeward | 46 |
-| Ridgemont Submarine | 46 |
-
 
 ## Challenge 3
 
@@ -103,14 +75,6 @@ WHERE length <= 50;
 - `SELECT COUNT(title)` counts the number of movies  
 - `FROM film` selects data from the film table  
 - `WHERE length <= 50` filters movies that are 50 minutes or less  
-
----
-
-### Result
-
-| count |
-|------|
-| 37 |
 
 
 ## Challenge 4
@@ -141,14 +105,6 @@ LIMIT 1;
 - `ORDER BY COUNT(amount) DESC` sorts the results from the highest payment count to the lowest
 - `LIMIT 1` returns only the staff member with the highest number of payments
 
----
-
-### Result
-
-| staff_id | count |
-|----------|------:|
-| 2 | 7304 |
-
 
 ## Challenge 5
 
@@ -177,16 +133,6 @@ HAVING COUNT(amount) >= 40;
 - `GROUP BY customer_id` groups the payments by each customer
 - `COUNT(amount)` counts the number of payments made by each customer
 - `HAVING COUNT(amount) >= 40` filters the results to include only customers with 40 or more payment transactions
-
----
-
-### Result
-
-| customer_id | count |
-|------------:|------:|
-| 144 | 40 |
-| 526 | 42 |
-| 148 | 45 |
 
 
 ## Challenge 6
@@ -217,16 +163,6 @@ HAVING SUM(amount) > 110;
 - `GROUP BY customer_id` groups the payments by customer.
 - `SUM(amount)` calculates the total amount spent by each customer.
 - `HAVING SUM(amount) > 110` filters the results to include only customers who spent more than **$110**.
-
----
-
-### Result
-
-| customer_id | total_spent |
-|------------:|------------:|
-| 187 | 110.97 |
-| 148 | 114.73 |
-| 526 | 111.55 |
 
 
 ## Challenge 7
@@ -259,10 +195,4 @@ LIMIT 1;
 - `ORDER BY customer_id DESC` sorts the matching customers by customer ID in descending order.
 - `LIMIT 1` returns only the customer with the highest customer ID.
 
----
 
-### Result
-
-| first_name | last_name |
-|------------|-----------|
-| Eddie | Tomlin |
